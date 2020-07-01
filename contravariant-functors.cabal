@@ -1,0 +1,64 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: bf7999d38de6c0aa5508787bb2d2e9b2d967a985b0a094b6aef9bd86ce6c833d
+
+name:           contravariant-functors
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/ssanj/contravariant-functors#readme>
+homepage:       https://github.com/ssanj/contravariant-functors#readme
+bug-reports:    https://github.com/ssanj/contravariant-functors/issues
+author:         sanjiv sahayam
+maintainer:     sanjsmailbox@gmail.com
+copyright:      (c) 2017 sanjiv sahayam
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/ssanj/contravariant-functors
+
+library
+  exposed-modules:
+      Lib
+      LogAction
+  other-modules:
+      Paths_contravariant_functors
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable contravariant-functors-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_contravariant_functors
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , contravariant
+    , contravariant-functors
+  default-language: Haskell2010
+
+test-suite contravariant-functors-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_contravariant_functors
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , contravariant-functors
+  default-language: Haskell2010
