@@ -40,6 +40,7 @@ showPersonAge person =  "age: " <> (show $ age person)
 putStrLnPersonAge :: LogAction Person
 putStrLnPersonAge = putStringlyLnLog showPersonAge
 
+
 putStrLnGreeting :: LogAction String
 putStrLnGreeting = contramap space . contramap doctor .contramap space . contramap there . contramap space . contramap hello $ putStrLnLog
 -- using Law 2
@@ -60,5 +61,6 @@ space = (" " <>)
 override :: a -> a -> a
 override value = const value
 
-q :: LogAction String -> LogAction String
-q = contramap (override "This is Q!!")
+qPutStrLn :: LogAction String
+qPutStrLn = contramap (override "This is Q!!") putStrLnLog
+

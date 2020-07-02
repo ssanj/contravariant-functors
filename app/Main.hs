@@ -13,18 +13,24 @@ main = do
 
 logHelloWorld :: IO ()
 logHelloWorld = unlog putStrLnLog "Hello World"
+-- Hello World
 
 logNumber :: IO ()
 logNumber = unlog putStrLnInt 42
+-- 42
 
 logPerson :: IO ()
 logPerson = unlog putStrLnPerson $ Person "Neelix" 60
+-- Person(name:Neelix, age: 60)
 
 logPersonAge :: IO ()
 logPersonAge = unlog putStrLnPersonAge $ Person "Tovak" 240
+-- age: 240
 
 logGreeting :: IO ()
 logGreeting = unlog putStrLnGreeting "Switzer"
+-- Hello there Doctor Switzer
 
 logOverride :: IO ()
-logOverride = unlog (q putStrLnLog) $ "Picard J L"
+logOverride = unlog qPutStrLn "Picard J L"
+-- This is Q!!
