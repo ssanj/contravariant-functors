@@ -4,6 +4,7 @@
 module LogAction where
 
 import Data.Functor.Contravariant
+import Model
 
 newtype LogAction a = LogAction { unlog :: a -> IO () }
 
@@ -25,8 +26,6 @@ putStringlyLnLog f = contramap f putStrLnLog
 
 putStrLnInt :: LogAction Int
 putStrLnInt = putStringlyLnLog show
-
-data Person = Person { name :: String, age :: Int }
 
 showPerson :: Person -> String
 showPerson (Person name age) = "Person(name:" <> name <> ", age: " <> (show age) <> ")"
