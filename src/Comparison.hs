@@ -32,5 +32,3 @@ personAgeCmp = contramap age intCmp
 
 fstCmp :: Comparison a -> Comparison (a, b)
 fstCmp compA = contramap fst compA
-
--- fstCmp intCmp

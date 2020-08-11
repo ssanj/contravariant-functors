@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 78b16a79f9898ccbf0252182c790025ac3c5ab46e63e95b700cef9beb5fed7d1
+-- hash: 624907e97811eb88cc3f05fdaf7855543325c6f3a98edf68a466b43c8e1745a6
 
 name:           contravariant-functors
 version:        0.1.0.0
@@ -32,12 +32,14 @@ library
       Lib
       LogAction
       Model
+      Opposite
   other-modules:
       Paths_contravariant_functors
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , containers
   default-language: Haskell2010
 
 executable contravariant-functors-exe
@@ -49,6 +51,7 @@ executable contravariant-functors-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
     , contravariant
     , contravariant-functors
   default-language: Haskell2010

@@ -24,6 +24,8 @@ dependencies:
 
 library:
   source-dirs: src
+  dependencies:
+  - containers
 
 executables:
   contravariant-functors-exe:
@@ -36,6 +38,7 @@ executables:
     dependencies:
     - contravariant-functors
     - contravariant
+    - containers
 
 tests:
   contravariant-functors-test:

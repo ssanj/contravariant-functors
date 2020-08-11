@@ -4,8 +4,10 @@ import LogAction
 import Model
 import Equivalence
 import Comparison
+import Opposite
 
 import Data.List (sortBy)
+import Data.Set (fromList)
 
 main :: IO ()
 main = do
@@ -15,6 +17,15 @@ main = do
   equalityActions
   line "Comparison"
   comparisonActions
+  line "Opposites"
+  oppositeActions
+
+oppositeActions :: IO ()
+oppositeActions = do
+  let namesList = ["Paris", "Kim", "Belanna", "Seven"]
+      namesSet  = fromList namesList
+  putStrLn $ "namesList length: " <> (show . getOp stringsLength $ namesList)
+  putStrLn $ "namesSet length: " <> (show . getOp unqiueStringsLength $ namesSet)
 
 comparisonActions :: IO ()
 comparisonActions = do
