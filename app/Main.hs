@@ -22,7 +22,7 @@ main = do
 
 oppositeActions :: IO ()
 oppositeActions = do
-  let namesList = ["Paris", "Kim", "Belanna", "Seven"]
+  let namesList = ["Paris", "Kim", "B'Elanna", "Seven"]
       namesSet  = fromList namesList
   putStrLn $ "namesList length: " <> (show . getOp stringsLength $ namesList)
   putStrLn $ "namesSet length: " <> (show . getOp unqiueStringsLength $ namesSet)
@@ -35,7 +35,7 @@ comparisonActions = do
 sortInts :: IO ()
 sortInts = do
   let unsortedNumbers = [3, 5, 1, 4, 2]
-      unsortedPeople = [Person "Tovak1" 240, Person "Janeway" 40, Person "Neelix" 60]
+      unsortedPeople = [Person "Tuvok1" 240, Person "Janeway" 40, Person "Neelix" 60]
       sortedNumbersAsc = sortBy (getComparison intCmp) unsortedNumbers
       sortedNumbersDsc = sortBy (flip $ getComparison intCmp) unsortedNumbers
       sortedPeopleAgeAsc = sortBy (getComparison personAgeCmp) unsortedPeople
@@ -66,24 +66,24 @@ equalityActions = do
 
 eqPerson :: IO ()
 eqPerson = do
-  let t1 = Person "Tovak1" 240
-      t2 = Person "Tovak2" 340
+  let t1 = Person "Tuvok1" 240
+      t2 = Person "Tuvok2" 340
       t3 = Person "Neelix" 60
       t4 = Person "Janeway" 40
-  putStrLn $ "Tovak1's age == Tovak2's age ? " <> (show $ getEquivalence personAgeEq t1 t2)
-  -- Tovak1's age == Tovak2's age ? False
+  putStrLn $ "Tuvok1's age == Tuvok2's age ? " <> (show $ getEquivalence personAgeEq t1 t2)
+  -- Tuvok1's age == Tuvok2's age ? False
 
-  putStrLn $ "Tovak1's age == Tovak1's age ? " <> (show $ getEquivalence personAgeEq t1 t1)
-  -- Tovak1's age == Tovak1's age ? True
+  putStrLn $ "Tuvok1's age == Tuvok1's age ? " <> (show $ getEquivalence personAgeEq t1 t1)
+  -- Tuvok1's age == Tuvok1's age ? True
 
-  putStrLn $ "Tovak2's age == Tovak2's age ? " <> (show $ getEquivalence personAgeEq t2 t2)
-  -- Tovak2's age == Tovak2's age ? True
+  putStrLn $ "Tuvok2's age == Tuvok2's age ? " <> (show $ getEquivalence personAgeEq t2 t2)
+  -- Tuvok2's age == Tuvok2's age ? True
 
-  putStrLn $ "Tovak1's name length == Tovak2's name length ? " <> (show $ getEquivalence personNameLengthEq t1 t2)
-  -- Tovak2's name length == Tovak2's name length ? True
+  putStrLn $ "Tuvok1's name length == Tuvok2's name length ? " <> (show $ getEquivalence personNameLengthEq t1 t2)
+  -- Tuvok2's name length == Tuvok2's name length ? True
 
   putStrLn $ "Janeway's name length == Neelix's name length ? " <> (show $ getEquivalence personNameLengthEq t3 t4)
-  -- Tovak2's name length == Neelix's name length ? False
+  -- Tuvok2's name length == Neelix's name length ? False
 
 eqInts :: IO ()
 eqInts = do
@@ -132,7 +132,7 @@ logPerson = unlog putStrLnPerson $ Person "Neelix" 60
 -- Person(name:Neelix, age: 60)
 
 logPersonAge :: IO ()
-logPersonAge = unlog putStrLnPersonAge $ Person "Tovak" 240
+logPersonAge = unlog putStrLnPersonAge $ Person "Tuvok" 240
 -- age: 240
 
 logGreeting :: IO ()
