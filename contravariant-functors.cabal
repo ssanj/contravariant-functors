@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 624907e97811eb88cc3f05fdaf7855543325c6f3a98edf68a466b43c8e1745a6
+-- hash: b9f45ebd3d714e69a5e0a389f1a215a608e9607e61689a81ec0286f3c8c8691f
 
 name:           contravariant-functors
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 
 library
   exposed-modules:
+      CallbackRunner
       Comparison
       Equivalence
       Lib

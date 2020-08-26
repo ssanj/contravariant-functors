@@ -63,3 +63,6 @@ override value = const value
 qPutStrLn :: LogAction String
 qPutStrLn = contramap (override "This is Q!!") putStrLnLog
 
+qPutStrLnOp :: LogAction String
+qPutStrLnOp = "This is Q!!" >$ putStrLnLog
+

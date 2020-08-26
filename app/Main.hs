@@ -140,7 +140,14 @@ logGreeting = unlog putStrLnGreeting "Switzer"
 -- Hello there Doctor Switzer
 
 logOverride :: IO ()
-logOverride = unlog qPutStrLn "Picard J L"
+logOverride = logOverrideWithFunc >> logOverrideWithOp
+
+logOverrideWithFunc :: IO ()
+logOverrideWithFunc = unlog qPutStrLn "Picard J L"
+-- This is Q!!
+
+logOverrideWithOp :: IO ()
+logOverrideWithOp = unlog qPutStrLnOp "Sisko B L"
 -- This is Q!!
 
 line :: String -> IO ()
